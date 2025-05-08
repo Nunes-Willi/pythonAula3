@@ -1,31 +1,54 @@
 
 #TODO 01
+#? WHILE
+# numbers = []
+# count = 0
+# while count < 20:
+#     try:
+#         number1 = int(input("valor 1: "))
+#         numbers.append(number1)
+#     except ValueError:
+#         break
+#     except KeyboardInterrupt:
+#         break
+#     count += 1
+
+# i = 0
+# positives_sum = 0
+# positives_count = 0
+
+# while i < len(numbers):
+#     if numbers[i] < 0:
+#         print(numbers[i])
+#     else:
+#         positives_sum += numbers[i]
+#         positives_count += 1
+
+#     i += 1
+
+# if positives_count > 0:
+#     print("Média dos positivos:", positives_sum / positives_count)
+# else:
+#     print("Não há números positivos para calcular a média.")
+
+#? FOR
 numbers = []
-while True:
-    try:
-        number1 = int(input("valor 1: "))
-        numbers.append(number1)
-    except ValueError:
-        break
-    except KeyboardInterrupt:
-        break
-i = 0
-while i < len(numbers):
-    print(numbers[i])
-    i += 1
+count = 0
+positives_sum = 0
+positives_count = 0
 
-if len(numbers[i]) < 0:
-    print("Negativo")
+
+for i in range(20):
+    number1 = int(input("valor 1: "))
+    numbers.append(number1)
+
+    if numbers[i] < 0:
+        print(numbers[i])
+    else:
+        positives_sum += numbers[i]
+        positives_count += 1
+
+if positives_count > 0:
+    print(f"Média dos positivos:, {positives_sum / positives_count}" )
 else:
-    print(sum(numbers) / len(numbers))
-
-
-#! Teste de para as varaiáveis
-# number1 = int(input("valor 1: "))
-# number2 = int(input("valor 2: "))
-# number3 = int(input("valor 3: "))
-# number4 = int(input("valor 4: "))
-
-# text1 = input("Texto 1: ")
-# text2 = input("Texto 2: ")
-# text3 = input("Texto 3: ")
+    print("Não há números positivos para calcular a média.")
