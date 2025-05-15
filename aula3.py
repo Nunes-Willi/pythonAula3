@@ -239,22 +239,38 @@
 #         print(f"Canal {canal}: {percentual:.2f}%")
 
 #TODO 18
-lucro_max = 0
-melhor_preco = 0
-melhor_ingressos = 0
+# lucro_max = 0
+# melhor_preco = 0
+# melhor_ingressos = 0
 
-for i in range(9):
-    preco = 5.0 - (i * 0.5)
-    ingressos = 120 + (i * 26)
-    lucro = (preco * ingressos) - 200
+# for i in range(9):
+#     preco = 5.0 - (i * 0.5)
+#     ingressos = 120 + (i * 26)
+#     lucro = (preco * ingressos) - 200
 
-    print(f"R${preco:.2f}  | {ingressos:^9} | R${lucro:.2f}")
+#     print(f"R${preco:.2f}  | {ingressos:^9} | R${lucro:.2f}")
 
-    if lucro > lucro_max:
-        lucro_max = lucro
-        melhor_preco = preco
-        melhor_ingressos = ingressos
+#     if lucro > lucro_max:
+#         lucro_max = lucro
+#         melhor_preco = preco
+#         melhor_ingressos = ingressos
 
-print("\nLucro máximo: R${:.2f}".format(lucro_max))
-print("Melhor preço: R${:.2f}".format(melhor_preco))
-print("Ingressos: {}".format(melhor_ingressos))
+# print("\nLucro máximo: R${:.2f}".format(lucro_max))
+# print("Melhor preço: R${:.2f}".format(melhor_preco))
+# print("Ingressos: {}".format(melhor_ingressos))
+
+#TODO 19
+n = int(input("Quantia de loops: "))
+divisores = []
+for x in range(n):
+    try:
+        if n < 1 or not int:
+            print("Não pode")
+    except ValueError:
+        break
+    else:
+        number = int(input("Coloque um numero Int: "))
+        for i in range(2, number + 1):
+            if (number % i == 0):
+                divisores.append(i)
+                print(f"Os numero {number} tem {len(divisores)} divisores, sendo {divisores}")
