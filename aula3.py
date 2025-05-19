@@ -1,4 +1,4 @@
-
+import math
 #TODO 01
 #? WHILE
 # numbers = []
@@ -183,8 +183,13 @@
 #     print("\n Tem algo de errado \n altura min é 80cm, max 300cm e incrição != 0")
 
 #TODO 09
+# x = 1.0
 
-
+# while x <= 5.0:
+#     y = (3 + 2*x + 6*x**2) / (1 + 9*x + 16*x**2)
+#     print(f"x = {x:.1f} -> y = {y:.4f}")
+#     x += 0.1
+#     x = round(x, 1)
 
 #TODO 10
 # fatorial = int(input("Escreva um numero para fatorar: "))
@@ -209,12 +214,46 @@
 # print(round(somar, 2))
 
 #TODO 13
+# n = int(input("Digite o valor de N: "))
+# s = 0
+
+# for i in range(1, n + 1):
+#     s += i / (n - i + 1)
+
+# print(f"Valor de s: {s:.2f}")
 
 #TODO 14
+# s = 0
+# sign = 1
+
+# for i in range(1, 102, 2):
+#     s += sign * (1 / (i**3))
+#     sign *= -1
+
+# pi_aprox = (s * 32) ** (1/3)
+
+# print(f"Valor aproximado de pi: {pi_aprox:.2f}")
 
 #TODO 15
+# soma = 0
+# numerador = 100
+
+# for i in range(20):
+#     termo = numerador / math.factorial(i)
+#     soma += termo
+#     numerador -= 1
+
+# print(f"Soma dos 20 termos: {soma:.2f}")
 
 #TODO 16
+# x = float(input("Digite o valor de x: "))
+# soma = 0
+
+# for i in range(30):
+#     termo = (x ** i) / math.factorial(i)
+#     soma += termo
+
+# print(f"Valor aproximado de e^{x} = {soma:.2f}")
 
 #TODO 17
 # audiencia = {4: 0, 5: 0, 9: 0, 12: 0}
@@ -255,22 +294,119 @@
 #         melhor_preco = preco
 #         melhor_ingressos = ingressos
 
-# print("\nLucro máximo: R${:.2f}".format(lucro_max))
-# print("Melhor preço: R${:.2f}".format(melhor_preco))
-# print("Ingressos: {}".format(melhor_ingressos))
+# # print("\nLucro máximo: R${:.2f}".format(lucro_max))
+# # print("Melhor preço: R${:.2f}".format(melhor_preco))
+# # print("Ingressos: {}".format(melhor_ingressos))
 
 #TODO 19
-n = int(input("Quantia de loops: "))
-divisores = []
-for x in range(n):
-    try:
-        if n < 1 or not int:
-            print("Não pode")
-    except ValueError:
-        break
-    else:
-        number = int(input("Coloque um numero Int: "))
-        for i in range(2, number + 1):
-            if (number % i == 0):
-                divisores.append(i)
-                print(f"Os numero {number} tem {len(divisores)} divisores, sendo {divisores}")
+# n = int(input("Quantos números você quer testar?: "))
+
+# for _ in range(n):
+#     numero = int(input("Digite um número inteiro: "))
+#     divisores = []
+
+#     for i in range(1, numero + 1):
+#         if numero % i == 0:
+#             divisores.append(i)
+
+#     print(f"Número lido = {numero}; \n Divisores = {divisores}; \n Quantidade de divisores = {len(divisores)}\n")
+
+#TODO 20
+# cookieByHour = 1
+# cookieBroken = 0
+# for hora in range(16):
+#      cookieBroken += cookieByHour
+#      cookieBroken *= 3
+
+# print(f"Total de biscoitos quebrados em 16 horas: {cookieBroken}")
+
+#TODO 21
+# alunos_18 = []
+# contador_maior_20 = 0
+
+# for i in range(5):
+#     nome = input(f"Digite o nome do aluno: ")
+#     idade = int(input(f"Digite a idade de {nome}: "))
+
+#     if idade == 18:
+#         alunos_18.append(nome)
+#     if idade > 20:
+#         contador_maior_20 += 1
+
+# print("\nAlunos com 18 anos:")
+# for aluno in alunos_18:
+#     print(aluno)
+
+# print(f"\nQuantidade de alunos com mais de 20 anos: {contador_maior_20}")
+
+#TODO 22
+# n = int(input("Qauntia de pessoas: "))
+# somaMulheres = 0
+# contMulheres = 0
+# somaTotal = 0
+
+# for _ in range(n):
+#     altura = float(input("Altura (em metros): "))
+#     sexo = input("Sexo (M/F): ").strip().upper()
+
+#     somaTotal += altura
+
+#     if sexo == 'F':
+#         somaMulheres += altura
+#         contMulheres += 1
+
+# media_mulheres = somaMulheres / contMulheres if contMulheres > 0 else 0
+# media_total = somaTotal / n
+
+# print(f"Média de altura das mulheres: {media_mulheres:.2f} m")
+# print(f"Média de altura da turma: {media_total:.2f} m")
+
+#TODO 23
+# while True:
+#     nome = input("Nome do cliente: ")
+#     if nome.upper() == "ULTIMO":
+#         break
+
+#     endereco = input("Endereço do cliente: ")
+#     valor = float(input("Valor da compra: R$ "))
+
+#     if valor > 500:
+#         total = valor * 0.80
+#     else:
+#         total = valor * 0.85
+
+#     print(f"Total a pagar (cliente {nome}): R$ {total:.2f}")
+
+#TODO 24
+# somaIdades = 0
+# contIdades = 0
+
+# while True:
+#     idade = int(input("Digite a idade: "))
+#     if idade > 0:
+#         somaIdades += idade
+#         contIdades += 1
+
+#     opcao = input("Deseja digitar mais um valor? (s/n): ").strip().lower()
+#     if opcao != 's':
+#         break
+
+# if contIdades > 0:
+#     media = somaIdades / contIdades
+#     print(f"Idade média do grupo: {media:.2f} anos")
+# else:
+#     print("Nenhuma idade válida foi digitada.")
+
+#TODO 25
+# diarias = int(input("Número de diárias: "))
+# valorDiaria = 50.00
+
+# if diarias < 15:
+#     taxa = 7.50
+# elif diarias == 15:
+#     taxa = 6.50
+# else:
+#     taxa = 5.00
+
+# total = diarias * (valorDiaria + taxa)
+# print(f"Total a pagar: R$ {total:.2f}")
