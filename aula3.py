@@ -410,3 +410,103 @@ import math
 
 # total = diarias * (valorDiaria + taxa)
 # print(f"Total a pagar: R$ {total:.2f}")
+
+#TODO 26
+# massaInicial = float(input("Digite a massa inicial (em kg): "))
+# massa = massaInicial
+# tempo = 0
+
+# while massa > 0.5:
+#     massa /= 2
+#     tempo += 50
+
+# print(f"Massa final: {massa:.2f} kg")
+# print(f"Tempo necessário: {tempo} segundos")
+
+#TODO 27
+# n = int(input("Quantos reabastecimentos: "))
+# kmAnt = 0
+# totalKm = 0
+# totalCombustivel = 0
+
+# for i in range(n - 1):
+#     kmAtual = float(input(f"Km do odômetro na parada {i + 2}: "))
+#     combustivel = float(input("Combustível abastecido (litros): "))
+
+#     distancia = kmAtual - kmAnt
+#     kmAnt = kmAtual
+
+#     rendimento = distancia / combustivel
+#     print(f"Rendimento da parada {i + 2}: {rendimento:.2f} km/l")
+
+#     totalKm += distancia
+#     totalCombustivel += combustivel
+
+# media_geral = totalKm / totalCombustivel
+# print(f"Média geral de rendimento: {media_geral:.2f} km/l")
+
+#TODO 28
+# pontosD = 0
+# pontosE = 0
+
+# while True:
+#     ponto = input("Quem marcou o ponto? (D/E): ").strip().upper()
+#     if ponto == 'D':
+#         pontosD += 1
+#     elif ponto == 'E':
+#         pontosE += 1
+
+#     diferenca = abs(pontosD - pontosE)
+
+#     if (pontosD >= 21 or pontosE >= 21) and diferenca >= 2:
+#         break
+
+# print("Vencedor:", "Direita (D)" if pontosD > pontosE else "Esquerda (E)")
+
+#TODO 29
+# limiteDiario = float(input("Digite o limite diário de pesca (em kg): "))
+# pesoTotal = 0
+# pesos = []
+
+# while pesoTotal <= limiteDiario:
+#     pesoPeixe = float(input("Peso do peixe (em gramas): ")) / 1000
+#     if pesoTotal + pesoPeixe > limiteDiario:
+#         print("Limite diário excedido!")
+#         break
+#     pesos.append(pesoPeixe)
+#     pesoTotal += pesoPeixe
+
+#     continuar = input("Informar o peso de mais um peixe: s (SIM) / n (NÃO)? ").strip().lower()
+#     if continuar != 's':
+#         break
+
+# print(f"Total pescado: {pesoTotal:.2f} kg")
+# print(f"Pesos dos peixes: {[round(p * 1000) for p in pesos]} gramas")
+
+#TODO 30
+preco = {
+    'R': float(input("Preço por kWh (Residencial): ")),
+    'C': float(input("Preço por kWh (Comercial): ")),
+    'I': float(input("Preço por kWh (Industrial): "))
+}
+
+totalKwh = {'R': 0, 'C': 0, 'I': 0}
+totalGeral = 0
+n = int(input("Quantidade de consumidores: "))
+
+for _ in range(n):
+    id = input("ID do consumidor: ")
+    kwh = float(input("kWh consumido: "))
+    tipo = input("Tipo (R/C/I): ").upper()
+
+    valor = kwh * preco[tipo]
+    print(f"ID: {id} - Total a pagar: R$ {valor:.2f}")
+
+    totalKwh[tipo] += kwh
+    totalGeral += kwh
+
+print("\nTotal kWh por tipo:")
+for t in ['R', 'C', 'I']:
+    print(f"{t}: {totalKwh[t]} kWh")
+
+print(f"\nConsumo médio geral: {totalGeral / n:.2f} kWh")
